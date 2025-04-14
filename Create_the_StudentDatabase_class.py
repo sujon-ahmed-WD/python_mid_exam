@@ -29,16 +29,56 @@ class Student:
             self._is_enrolled=False
             print("The student has been dropped.")
     def view_student_info(self):
-        print(f" student id:{self._student_id},name:{self.name},department:{self._department}")
-        
-        if self.enroll_student:
+        print(f" student id:{self._student_id},name:{self._name},department:{self._department}")
+        # print("Status:", "Enrolled" if self._is_enrolled else "Not Enrolled")
+        if self._is_enrolled_student:
             print("enrolled")
         else:
             print("not enrolled")
         
-data=Student(10,'tusbala','cst','yes')
+data = Student(10, 'Tusbala', 'CST') 
  
 
+# Replia  System
 
+while True:
+              print("===== Student Menu =====")
+              
+              print("1. View All Students")
+              print("2. Enroll Student")
+              print("3. Drop Student")
+              print("4. Exit")
+
+              choies=int(input("Enter the choiess => "))
+              
+              if choies==1:    
+                 for stu in StudentDatabase.student_list:
+                     stu.view_student_info()
+              elif choies==2:
+                    sid=int(input("Student ID to enroll : "))
+                    found=False
+                    for stu in StudentDatabase.student_list:
+                        if stu._student_id==sid:
+                            stu.enroll_student()
+                            found=True
+                            break
+                    if not found:
+                            print("Student is not Enrolled :")
+                            
+              elif choies==3:
+                   sid=int(input("Student ID to DropStudent : "))
+                   found=False
+                   for stu in StudentDatabase.student_list:
+                       if stu._student_id==sid:
+                           stu.drop_student()
+                           found=True
+                           break
+                   if not found:
+                         print("Student Id is not DropStudent : ")
+                   
+              elif choies==4:
+                  break
+                  
+    
 
  
