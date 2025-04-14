@@ -30,7 +30,6 @@ class Student:
             print("The student has been dropped.")
     def view_student_info(self):
         print(f" student id:{self._student_id},name:{self._name},department:{self._department}")
-        # print("Status:", "Enrolled" if self._is_enrolled else "Not Enrolled")
         if self._is_enrolled_student:
             print("enrolled")
         else:
@@ -42,7 +41,7 @@ data = Student(10, 'Tusbala', 'CST')
 # Replia  System
 
 while True:
-              print("===== Student Menu =====")
+              print(" /n ===== Student Menu =====")
               
               print("1. View All Students")
               print("2. Enroll Student")
