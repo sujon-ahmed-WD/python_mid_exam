@@ -30,7 +30,8 @@ class Student:
             print("The student has been dropped.")
     def view_student_info(self):
         print(f" student id:{self._student_id},name:{self._name},department:{self._department}")
-        if self._is_enrolled_student:
+        
+        if self._is_enrolled:
             print("enrolled")
         else:
             print("not enrolled")
@@ -73,10 +74,10 @@ while True:
                            found=True
                            break
                    if not found:
-                         print("Student Id is not DropStudent : ")
+                         print("Student Id is not DropStudent   : ")
                    
               elif choies==4:
-                  break
+                 exit()
                   
     
 
